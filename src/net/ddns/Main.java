@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-	Directory directory = new Directory("C:/Users/adams");
+	Directory directory = new Directory("trąbka!!!");
 	directory.printDir();
     }
 }
@@ -17,8 +17,11 @@ class Directory {
     Directory(String dirName) {
         //wypełnienie tablicy poszczególnymi pozycjami z katalogu
         File rootDir = new File(dirName);
+        if (!rootDir.exists())  {
+            System.out.println("Nie ma takiego katalogu: " + dirName);
+            System.exit(1);
+        }
         File[] rawDirItems = rootDir.listFiles();
-        assert rawDirItems != null;
         for (File item: rawDirItems)   {
             if (item.isFile())  {
                 this.dirItems.add(new FileItem(item.getName()));

@@ -2,13 +2,23 @@ package net.ddns;
 
 public class Tests {
     public static void main(String[] args)  {
-        Level level = Level.LOW;
-        System.out.println(level);
+        Country country = Country.Poland;
+        System.out.println(country.getAbbreviation());
     }
 }
 
-enum Level {
-    LOW,
-    MEDIUM,
-    HIGH
+enum Country {
+    Poland("PL"), Germany("GE"), England("EN");
+
+    String abbreviation;
+
+    Country(String abbreviation)    {
+        this.abbreviation = abbreviation;
+    }
+
+    String getAbbreviation()    {
+        return this.abbreviation;
+    }
+
+
 }
