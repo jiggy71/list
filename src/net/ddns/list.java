@@ -3,11 +3,17 @@ package net.ddns;
 import java.io.File;
 import java.util.ArrayList;
 
-public class Main {
+public class list {
 
     public static void main(String[] args) {
-	Directory directory = new Directory("trąbka!!!");
-	directory.printDir();
+        String name;
+        if (args.length < 1)    {
+            name = "C:/";
+        } else  {
+            name = args[0];
+        }
+        Directory directory = new Directory(name);
+	    directory.printDir();
     }
 }
 
