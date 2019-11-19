@@ -31,14 +31,14 @@ class Directory {
     public void printDirs() {
         for (DirectoryItem item: this.dirItems)  {
             if (item instanceof DirItem)    {
-                ((DirItem) item).print();
+                item.print();
             }
         }
     }
     public void printFiles()    {
         for (DirectoryItem item: this.dirItems) {
             if (item instanceof FileItem)   {
-                ((FileItem) item).print();
+                item.print();
             }
         }
     }
@@ -61,6 +61,8 @@ abstract class DirectoryItem {
     public void setName(String name) {
         this.name = name;
     }
+
+    public abstract void print();
 }
 
 class FileItem extends DirectoryItem {
