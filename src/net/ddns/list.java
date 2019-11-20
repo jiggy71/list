@@ -1,6 +1,7 @@
 package net.ddns;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class list {
@@ -8,7 +9,7 @@ public class list {
     public static void main(String[] args) {
         String name;
         if (args.length < 1)    {
-            name = "C:/";
+            name = Paths.get(".").toAbsolutePath().normalize().toString();
         } else  {
             name = args[0];
         }
